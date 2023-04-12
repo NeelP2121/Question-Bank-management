@@ -1,0 +1,27 @@
+server:
+  port: 9191
+
+spring:
+  application:
+    name: API-GATEWAY
+  cloud:
+    gateway:
+      routes:
+        - id: ItemBankCRUD
+          uri: lb://ItemBankCRUD
+          predicates:
+            - Path=/Items/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: Item
+                fallbackuri: forward:/itemBankCRUDServiceFallBack
+        - id: QuestionPaperGen
+          uri: lb://QuestionPaperGen
+          predicates:
+            - Path=/QuestionPaper/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: QuestionPaperGen
+                fallbackuri: forward:/questionPaperGenServiceFallBack
