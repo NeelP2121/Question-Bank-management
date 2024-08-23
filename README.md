@@ -2,7 +2,7 @@
 
 ## Overview
 
-The **Question Bank Management System** is a microservice-based application designed to manage a question bank, generate question papers, and provide search functionality. This project leverages Java Spring Boot to build three independent yet integrated services:
+The **Question Bank Management System** is a microservice-based application designed to manage a question bank, generate question papers, and provide search functionality. The system consists of three primary microservices:
 
 1. **ItemBankCRUD Service**: Manages CRUD operations for the question bank.
 2. **QuestionPaperGeneration Service**: Generates question papers based on specified criteria.
@@ -49,7 +49,7 @@ Question-Bank-management/
 - **Java 11** or higher
 - **Maven** (for building the project)
 - **MySQL** or any other relational database
-- **Docker** (optional, for containerization)
+- **Eclipse IDE** or any other Java-compatible IDE
 
 ## Installation and Setup
 
@@ -60,45 +60,26 @@ git clone https://github.com/NeelP2121/Question-Bank-management.git
 cd Question-Bank-management
 ```
 
-### Build the Services
+### Import into Eclipse
 
-Navigate to each service directory (`itembankCRUD`, `questionpaperGeneration`, `searchService`) and build the project using Maven:
-
-```bash
-mvn clean install
-```
-
-### Run the Services
-
-Each service can be run independently. Navigate to the service directory and use:
-
-```bash
-mvn spring-boot:run
-```
+1. Open Eclipse IDE.
+2. Go to **File > Import > Maven > Existing Maven Projects**.
+3. Browse to the directory where you cloned the repository.
+4. Select the directories of the three services (`itembankCRUD`, `questionpaperGeneration`, and `searchService`) and click **Finish**.
 
 ### Database Configuration
 
-Ensure that the `application.properties` or `application.yml` files in each service are configured with the correct database settings. Use the provided SQL scripts to initialize your database schema.
+1. Ensure MySQL (or your chosen RDBMS) is running.
+2. Configure the database connection in each service’s `src/main/resources/application.properties` or `application.yml` file.
+3. Use the provided SQL scripts (if any) to set up the initial schema and data.
 
-## Running with Docker
+### Build and Run the Services
 
-### Build Docker Images
+For each service:
 
-From the root directory, build Docker images for each service:
-
-```bash
-docker build -t itembankcrud-service ./itembankCRUD
-docker build -t questionpaper-generation-service ./questionpaperGeneration
-docker build -t search-service ./searchService
-```
-
-### Run Containers
-
-```bash
-docker-compose up
-```
-
-## Usage
+1. Right-click on the project in Eclipse and select **Run As > Maven build**.
+2. In the Goals field, enter `clean install` and click **Run**.
+3. After the build is successful, right-click on the project again and select **Run As > Spring Boot App**.
 
 ### Accessing the Services
 
