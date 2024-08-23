@@ -1,7 +1,3 @@
-Here’s a `README.md` file tailored for your [Question Bank Management](https://github.com/NeelP2121/Question-Bank-management/tree/master) project:
-
----
-
 # Question Bank Management System
 
 ## Overview
@@ -124,11 +120,3 @@ Contributions are welcome! Please fork this repository, create a new branch, and
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Contact
-
-For questions or further information, please contact [Neel P](mailto:your.email@example.com).
-
----
-
-This `README.md` provides a comprehensive guide to your project. You can adjust the contact information and other specific details as needed.
